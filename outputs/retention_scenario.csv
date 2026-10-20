@@ -1,0 +1,4 @@
+segment,segment_size,baseline_churned,baseline_churn_rate,avg_monthly_charge,effectiveness_assumption,customers_retained_hypothetical,revenue_saved_hypothetical,campaign_cost_hypothetical,net_value_hypothetical,breakeven_effectiveness,cost_per_customer,months_retained_assumed,NOTE
+Month-to-month | Fiber optic | Electronic check,1307,789,0.6037,87.18,0.05,39.4,20636.2,65350,-44713.8,0.1583,50,6,Effectiveness is hypothetical. An A/B test is the recommended next step.
+Month-to-month | Fiber optic | Electronic check,1307,789,0.6037,87.18,0.1,78.9,41272.4,65350,-24077.6,0.1583,50,6,Effectiveness is hypothetical. An A/B test is the recommended next step.
+Month-to-month | Fiber optic | Electronic check,1307,789,0.6037,87.18,0.15,118.4,61908.6,65350,-3441.4,0.1583,50,6,Effectiveness is hypothetical. An A/B test is the recommended next step.
