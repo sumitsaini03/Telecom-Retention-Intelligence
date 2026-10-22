@@ -41,7 +41,7 @@ Validation date: 2026-10-22 (Asia/Calcutta)
 
 The final analytics, Power BI preparation, and automated suite used Python 3.12.14 in the pinned environment from `requirements-lock.txt`. Database credentials are supplied through local environment configuration and are not recorded in this report.
 
-The GitHub Actions workflow uses a disposable PostgreSQL 16 service and an integration-only test credential. Its first remote run for commit `95460fe` succeeded in 1 minute 20 seconds and executed the database integration test. GitHub reported that the original action versions targeted Node 20 and were being forced to Node 24; this follow-up updates them to Node 24-compatible releases. The refreshed workflow run will be triggered by the follow-up push.
+The GitHub Actions workflow uses a disposable PostgreSQL 16 service and an integration-only test credential. The first remote run for commit `95460fe` succeeded in 1 minute 20 seconds and executed the database integration test. GitHub reported that those action versions targeted Node 20 and were being forced to Node 24, so I updated them to Node 24-compatible releases. The updated workflow passed for commit `ca9437a` in 1 minute 28 seconds. GitHub's only remaining annotation was the scheduled `ubuntu-latest` image migration to Ubuntu 26.
 
 ### Failures encountered and resolved
 
