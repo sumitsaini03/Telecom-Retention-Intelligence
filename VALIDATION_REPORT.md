@@ -21,11 +21,11 @@ Validation date: 2026-10-22 (Asia/Calcutta)
 - SHAP validation: passed on the fitted final XGBoost booster; 500 holdout rows and 45 transformed features. Summary, mean-absolute bar, and local waterfall figures were created. SHAP scale is raw model margin (log-odds); attributions are not causal.
 - Evidence: `outputs/metrics.json`, `model_comparison.csv`, `confusion_matrix.csv`, `feature_importance_shap.csv`, SHAP PNGs, and `roc_pr_curves.png`.
 
-## PostgreSQL — prior run passed; current rerun unavailable
+## PostgreSQL — passed in CI; local rerun unavailable
 
-- The recorded PostgreSQL 16.15 run on 2026-10-20 loaded 7,043 customer rows and 7,043 risk-score rows, executed all 14 named SQL query blocks, and passed all nine Pandas parity comparisons. Internet add-on adoption used the 5,517 customers with internet service as its denominator.
-- Evidence: `outputs/postgres_validation.json`. That artifact predates the latest analytics refresh and is retained as historical evidence.
-- The database integration could not be rerun during this final validation. The Docker client could not connect to its local Linux engine named pipe, and `TELCO_PG_DSN` was not configured. The latest pytest run therefore skipped the PostgreSQL integration test. Do not treat the historical artifact as validation of the newly regenerated score export.
+- The GitHub Actions run for commit `45cff90` passed with a disposable PostgreSQL 16 service. CI regenerated the pipeline outputs, loaded customer and risk rows, executed the named SQL analyses, and passed the nine Pandas parity checks. [View the successful CI run](https://github.com/sumitsaini03/Telecom-Retention-Intelligence/actions/runs/39785823717).
+- The checked-in `outputs/postgres_validation.json` is a recorded PostgreSQL 16.15 result from 2026-10-20: 7,043 customers, 7,043 risk rows, 14 query blocks, and nine parity checks. That artifact predates the latest analytics refresh; the final CI run is the validation evidence for current outputs.
+- A local PostgreSQL rerun was unavailable because the Docker client could not connect to its local Linux engine named pipe and `TELCO_PG_DSN` was not configured. Thus the local pytest suite skipped the database test, while CI exercised it successfully.
 
 ## Automated tests
 
@@ -37,18 +37,19 @@ Validation date: 2026-10-22 (Asia/Calcutta)
 | Power BI project generation: `python scripts\build_powerbi_project.py` | Passed; six pages, nine tables, and 43 visuals. |
 | PBIR validator: `npx --yes --package @microsoft/powerbi-report-authoring-cli@0.5.0 powerbi-report-author validate powerbi\TelecomRetention\TelecomRetention.pbip` | **Passed; 0 errors and 0 warnings.** |
 | Automated suite: `python -m pytest -q` | **20 passed, 1 skipped, 0 failed.** The PostgreSQL integration test skipped because `TELCO_PG_DSN` is not configured. |
-| PostgreSQL integration | Not rerun; Docker's local Linux engine pipe was unavailable. The successful 2026-10-20 run is documented above. |
+| PostgreSQL integration in final GitHub Actions run | **Passed** on PostgreSQL 16 using the freshly regenerated outputs; nine SQL/Pandas parity checks passed. |
+| Local PostgreSQL rerun | Not available; Docker's local Linux engine pipe was unavailable, so the local suite skipped its integration test. |
 
 The final analytics, Power BI preparation, and automated suite used Python 3.12.14 in the pinned environment from `requirements-lock.txt`. Database credentials are supplied through local environment configuration and are not recorded in this report.
 
-The GitHub Actions workflow uses a disposable PostgreSQL 16 service and an integration-only test credential. The first remote run for commit `95460fe` succeeded in 1 minute 20 seconds and executed the database integration test. GitHub reported that those action versions targeted Node 20 and were being forced to Node 24, so I updated them to Node 24-compatible releases. The updated workflow passed for commit `ca9437a` in 1 minute 28 seconds. GitHub's only remaining annotation was the scheduled `ubuntu-latest` image migration to Ubuntu 26.
+The GitHub Actions workflow uses a disposable PostgreSQL 16 service and an integration-only test credential. The first remote run for commit `95460fe` succeeded in 1 minute 20 seconds and executed the database integration test. After GitHub reported that the original action versions targeted Node 20 and were being forced to Node 24, I updated them to Node 24-compatible releases. The updated workflow passed for commit `ca9437a` in 1 minute 28 seconds and for the final documentation commit `45cff90` in 1 minute 26 seconds. GitHub's only remaining annotation was the scheduled `ubuntu-latest` image migration to Ubuntu 26.
 
 ### Failures encountered and resolved
 
 - The first pipeline attempt found a monthly-charge aggregate column-name mismatch. The second found that the installed scikit-learn version did not accept a `color` argument in `RocCurveDisplay.from_predictions`. Both root causes were fixed before the final clean run.
-- The earlier PostgreSQL container start found host port 5432 occupied. Compose now binds host port 55432 to loopback and requires a local password; the latest integration rerun was unavailable because Docker's engine pipe could not be reached.
+- The earlier local PostgreSQL container start found host port 5432 occupied. Compose now binds host port 55432 to loopback and requires a local password; the local engine pipe remains unavailable, while CI validates the current SQL integration.
 - An earlier post-implementation test run had 12 passes and 4 failures: three fixture tests were intercepted by a project-dataset hash check, and one static Power BI wording assertion did not match the guide. Those causes were fixed. The latest suite reports 20 passed and 1 skipped.
-- No executed Python, chart, inference, or PBIR validator checks failed. Current PostgreSQL execution is unverified, as described above.
+- No executed Python, chart, inference, PBIR validator, or CI PostgreSQL checks failed. Local database access remains unavailable, as described above.
 
 ## Power BI — PBIR validated; Desktop checks not run
 
