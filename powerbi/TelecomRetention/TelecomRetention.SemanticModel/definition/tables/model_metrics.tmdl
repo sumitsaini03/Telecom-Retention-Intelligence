@@ -1,0 +1,95 @@
+table 'Model Metrics'
+	lineageTag: 7ccf3636-9cf4-5373-a5fd-0e4808f4cbd6
+	column 'model'
+		dataType: string
+		sourceColumn: model
+		summarizeBy: none
+		lineageTag: 6015e29d-92b5-56fe-9be9-113cbcdfda68
+	column 'threshold'
+		dataType: double
+		sourceColumn: threshold
+		summarizeBy: average
+		lineageTag: 56ec6ffb-bfb4-58df-981a-902894080669
+	column 'threshold_source'
+		dataType: string
+		sourceColumn: threshold_source
+		summarizeBy: none
+		lineageTag: 122cf7cf-46f6-54ee-8e02-815758ee196f
+	column 'roc_auc'
+		dataType: double
+		sourceColumn: roc_auc
+		summarizeBy: average
+		lineageTag: ba74cc89-0110-57c2-ac6b-63b9d0ff33e1
+	column 'pr_auc_average_precision'
+		dataType: double
+		sourceColumn: pr_auc_average_precision
+		summarizeBy: average
+		lineageTag: 241d942a-317d-51ba-a1c2-cf2cacf1fb1b
+	column 'precision'
+		dataType: double
+		sourceColumn: precision
+		summarizeBy: average
+		lineageTag: 677ec0e8-a28b-5fbf-b04a-93e92f929146
+	column 'recall'
+		dataType: double
+		sourceColumn: recall
+		summarizeBy: average
+		lineageTag: 2aa80908-76c0-5133-baa2-7849efe6e95f
+	column 'f1'
+		dataType: double
+		sourceColumn: f1
+		summarizeBy: average
+		lineageTag: d2777633-0121-5603-8a7a-0e260ec610a6
+	column 'accuracy'
+		dataType: double
+		sourceColumn: accuracy
+		summarizeBy: average
+		lineageTag: 89461a69-b021-5eda-8628-d0716b7e455e
+	column 'specificity'
+		dataType: double
+		sourceColumn: specificity
+		summarizeBy: average
+		lineageTag: dc514b5a-1b7d-521e-bf8b-3fa47587265f
+	column 'brier_score'
+		dataType: double
+		sourceColumn: brier_score
+		summarizeBy: average
+		lineageTag: 092ca766-5f5a-513d-9be2-7b6fcd0f5917
+	column 'evaluation_size'
+		dataType: int64
+		sourceColumn: evaluation_size
+		summarizeBy: sum
+		lineageTag: 194e49df-85e1-58da-b40a-e58238be02a8
+	column 'positive_count'
+		dataType: int64
+		sourceColumn: positive_count
+		summarizeBy: sum
+		lineageTag: ce446212-009a-5ebc-aca5-d1185783b1f7
+	column 'positive_prevalence'
+		dataType: double
+		sourceColumn: positive_prevalence
+		summarizeBy: average
+		lineageTag: af3fdb6c-63d5-5bec-9577-2e89df42057e
+
+	partition 'Model Metrics' = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(ProjectRoot & "/powerbi/data/ModelMetrics.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    TypedColumns = Table.TransformColumnTypes(PromotedHeaders, {{"model", type text},
+			        {"threshold", type number},
+			        {"threshold_source", type text},
+			        {"roc_auc", type number},
+			        {"pr_auc_average_precision", type number},
+			        {"precision", type number},
+			        {"recall", type number},
+			        {"f1", type number},
+			        {"accuracy", type number},
+			        {"specificity", type number},
+			        {"brier_score", type number},
+			        {"evaluation_size", Int64.Type},
+			        {"positive_count", Int64.Type},
+			        {"positive_prevalence", type number}}, "en-US")
+			in
+			    TypedColumns

@@ -1,0 +1,127 @@
+table 'Holdout Scores'
+	lineageTag: c2ad8031-cdaf-51e8-9838-793a7a4cf6f8
+	column 'customerID'
+		dataType: string
+		sourceColumn: customerID
+		summarizeBy: none
+		lineageTag: ec235038-c65d-521e-85cf-2fb53f7a7817
+	column 'Churn'
+		dataType: string
+		sourceColumn: Churn
+		summarizeBy: none
+		lineageTag: e1ef5130-79f5-5cb2-acc0-fb3b4b722c57
+	column 'Churn_Flag'
+		dataType: int64
+		sourceColumn: Churn_Flag
+		summarizeBy: sum
+		lineageTag: e769e902-189c-52af-82eb-0ef6d36f76de
+		folder: Data Quality
+	column 'tenure'
+		dataType: int64
+		sourceColumn: tenure
+		summarizeBy: sum
+		lineageTag: 81261979-4d29-5dcd-9cc3-f97e2c8c584e
+	column 'tenure_band'
+		dataType: string
+		sourceColumn: tenure_band
+		summarizeBy: none
+		lineageTag: 1fc0a2ec-6652-50d7-aa1d-b774743391f8
+	column 'tenure_band_order'
+		dataType: int64
+		sourceColumn: tenure_band_order
+		summarizeBy: sum
+		lineageTag: bbed49d4-91c1-5298-91ac-995771760c3e
+	column 'Contract'
+		dataType: string
+		sourceColumn: Contract
+		summarizeBy: none
+		lineageTag: 3d6f69fe-2650-5db5-87de-683e99f33b1e
+	column 'InternetService'
+		dataType: string
+		sourceColumn: InternetService
+		summarizeBy: none
+		lineageTag: c98d8ea0-946a-54e3-ba26-778786b6a07f
+	column 'PaymentMethod'
+		dataType: string
+		sourceColumn: PaymentMethod
+		summarizeBy: none
+		lineageTag: 1bdddca7-6a5b-5e71-a54a-7ba46d21915e
+	column 'TechSupport'
+		dataType: string
+		sourceColumn: TechSupport
+		summarizeBy: none
+		lineageTag: c8a1f071-7ce1-5867-a13e-92021a685366
+	column 'MonthlyCharges'
+		dataType: double
+		sourceColumn: MonthlyCharges
+		summarizeBy: average
+		lineageTag: 70af6214-dacd-5db9-ad06-5ddb23f21696
+	column 'MonthlyChargeBand'
+		dataType: string
+		sourceColumn: MonthlyChargeBand
+		summarizeBy: none
+		lineageTag: 8192e829-081c-522b-8c0c-ad8b69d7edd0
+	column 'ServiceCombination'
+		dataType: string
+		sourceColumn: ServiceCombination
+		summarizeBy: none
+		lineageTag: 5fc9c861-3c57-5dca-9dfd-80fa449c9f1a
+	column 'churn_probability'
+		dataType: double
+		sourceColumn: churn_probability
+		summarizeBy: average
+		lineageTag: 3b0c76dc-914a-55b4-b59e-30dda7406dba
+	column 'predicted_churn'
+		dataType: int64
+		sourceColumn: predicted_churn
+		summarizeBy: sum
+		lineageTag: 1726bbbe-31a6-5db3-8fdb-b984e47cb451
+	column 'risk_tier'
+		dataType: string
+		sourceColumn: risk_tier
+		summarizeBy: none
+		lineageTag: c785eae9-2dc2-5039-9cc0-c6dc51cbdf89
+		sortByColumn: risk_tier_order
+	column 'risk_tier_order'
+		dataType: int64
+		sourceColumn: risk_tier_order
+		summarizeBy: sum
+		lineageTag: c5028b3a-685b-5e2c-9b64-b86db41b54c4
+	column 'model_identifier'
+		dataType: string
+		sourceColumn: model_identifier
+		summarizeBy: none
+		lineageTag: 44e734dd-8d79-596c-a826-78f94132562e
+	column 'data_split'
+		dataType: string
+		sourceColumn: data_split
+		summarizeBy: none
+		lineageTag: 2c251ca0-6f02-5cae-b0fb-5e9623893d41
+
+	partition 'Holdout Scores' = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(ProjectRoot & "/powerbi/data/HoldoutScores.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    TypedColumns = Table.TransformColumnTypes(PromotedHeaders, {{"customerID", type text},
+			        {"Churn", type text},
+			        {"Churn_Flag", Int64.Type},
+			        {"tenure", Int64.Type},
+			        {"tenure_band", type text},
+			        {"tenure_band_order", Int64.Type},
+			        {"Contract", type text},
+			        {"InternetService", type text},
+			        {"PaymentMethod", type text},
+			        {"TechSupport", type text},
+			        {"MonthlyCharges", type number},
+			        {"MonthlyChargeBand", type text},
+			        {"ServiceCombination", type text},
+			        {"churn_probability", type number},
+			        {"predicted_churn", Int64.Type},
+			        {"risk_tier", type text},
+			        {"risk_tier_order", Int64.Type},
+			        {"model_identifier", type text},
+			        {"data_split", type text}}, "en-US")
+			in
+			    TypedColumns

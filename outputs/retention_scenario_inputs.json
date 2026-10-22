@@ -1,0 +1,11 @@
+{
+  "effectiveness_levels": [
+    0.05,
+    0.1,
+    0.15
+  ],
+  "cost_per_customer_assumed": 50.0,
+  "months_retained_assumed": 6,
+  "segment_selection": "Highest observed churned monthly charges among Contract x InternetService x PaymentMethod segments with at least 50 customers.",
+  "limitations": "Gross charges are not profit or savings. A randomized retention experiment and margin/cost data are needed to estimate campaign impact."
+}

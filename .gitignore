@@ -6,3 +6,13 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+
+.task-deps/
+data/*.download.csv
+artifacts/**/*.log
+outputs/*.log
+outputs/*_exit_code.txt
+outputs/test-results.xml
+telecom-retention-intelligence-final.zip
+.env.*
+!.env.example

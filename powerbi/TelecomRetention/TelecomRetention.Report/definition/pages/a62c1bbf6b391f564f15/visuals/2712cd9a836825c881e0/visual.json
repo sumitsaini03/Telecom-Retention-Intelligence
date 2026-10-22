@@ -1,0 +1,195 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "2712cd9a836825c881e0",
+  "position": {
+    "x": 20,
+    "y": 416,
+    "z": 1,
+    "height": 282,
+    "width": 1241,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Retention Scenario"
+                    }
+                  },
+                  "Property": "segment"
+                }
+              },
+              "queryRef": "Retention Scenario.segment",
+              "nativeQueryRef": "Retention Scenario.segment",
+              "displayName": "Scenario segment"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Retention Scenario"
+                    }
+                  },
+                  "Property": "segment_customers_observed"
+                }
+              },
+              "queryRef": "Retention Scenario.segment_customers_observed",
+              "nativeQueryRef": "Retention Scenario.segment_customers_observed",
+              "displayName": "Observed customers"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Retention Scenario"
+                    }
+                  },
+                  "Property": "historically_churned_observed"
+                }
+              },
+              "queryRef": "Retention Scenario.historically_churned_observed",
+              "nativeQueryRef": "Retention Scenario.historically_churned_observed",
+              "displayName": "Observed churned"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Retention Scenario"
+                    }
+                  },
+                  "Property": "historical_churn_rate_observed"
+                }
+              },
+              "queryRef": "Retention Scenario.historical_churn_rate_observed",
+              "nativeQueryRef": "Retention Scenario.historical_churn_rate_observed",
+              "displayName": "Observed churn rate"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Retention Scenario"
+                    }
+                  },
+                  "Property": "effectiveness_assumption"
+                }
+              },
+              "queryRef": "Retention Scenario.effectiveness_assumption",
+              "nativeQueryRef": "Retention Scenario.effectiveness_assumption",
+              "displayName": "Hypothetical effectiveness"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Retention Scenario"
+                    }
+                  },
+                  "Property": "cost_per_contact_assumption"
+                }
+              },
+              "queryRef": "Retention Scenario.cost_per_contact_assumption",
+              "nativeQueryRef": "Retention Scenario.cost_per_contact_assumption",
+              "displayName": "Hypothetical cost / contact"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Retention Scenario"
+                    }
+                  },
+                  "Property": "retained_months_assumption"
+                }
+              },
+              "queryRef": "Retention Scenario.retained_months_assumption",
+              "nativeQueryRef": "Retention Scenario.retained_months_assumption",
+              "displayName": "Assumed months"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Retention Scenario"
+                    }
+                  },
+                  "Property": "customers_retained_hypothetical"
+                }
+              },
+              "queryRef": "Retention Scenario.customers_retained_hypothetical",
+              "nativeQueryRef": "Retention Scenario.customers_retained_hypothetical",
+              "displayName": "Hypothetical retained"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Retention Scenario"
+                    }
+                  },
+                  "Property": "gross_charges_over_assumed_months_hypothetical"
+                }
+              },
+              "queryRef": "Retention Scenario.gross_charges_over_assumed_months_hypothetical",
+              "nativeQueryRef": "Retention Scenario.gross_charges_over_assumed_months_hypothetical",
+              "displayName": "Hypothetical gross charges"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Retention Scenario"
+                    }
+                  },
+                  "Property": "interpretation"
+                }
+              },
+              "queryRef": "Retention Scenario.interpretation",
+              "nativeQueryRef": "Retention Scenario.interpretation",
+              "displayName": "Interpretation"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Illustrative scenario assumptions and arithmetic'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

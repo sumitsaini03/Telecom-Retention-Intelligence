@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "f5d6099254f4806639b8",
+  "position": {
+    "x": 20,
+    "y": 12,
+    "z": 0,
+    "height": 215,
+    "width": 405,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Total Customers"
+                }
+              },
+              "queryRef": "Customer Profile.Total Customers",
+              "nativeQueryRef": "Customer Profile.Total Customers",
+              "displayName": "Customers"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "ServiceCombination"
+                }
+              },
+              "queryRef": "Customer Profile.ServiceCombination",
+              "nativeQueryRef": "Customer Profile.ServiceCombination",
+              "displayName": "Phone / internet"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Customers by service combination'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

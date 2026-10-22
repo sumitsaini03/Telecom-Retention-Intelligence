@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "4fc684135319d61e5479",
+  "position": {
+    "x": 856,
+    "y": 244,
+    "z": 5,
+    "height": 215,
+    "width": 405,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Observed Churn Rate"
+                }
+              },
+              "queryRef": "Customer Profile.Observed Churn Rate",
+              "nativeQueryRef": "Customer Profile.Observed Churn Rate",
+              "displayName": "Churn Rate"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "TechSupport"
+                }
+              },
+              "queryRef": "Customer Profile.TechSupport",
+              "nativeQueryRef": "Customer Profile.TechSupport",
+              "displayName": "Tech Support"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Observed churn rate by technical support'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

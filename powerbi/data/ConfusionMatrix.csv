@@ -1,0 +1,9 @@
+model,actual_outcome,predicted_outcome,customers
+logistic_regression,No,No,794
+logistic_regression,No,Yes,241
+logistic_regression,Yes,No,102
+logistic_regression,Yes,Yes,272
+xgboost,No,No,829
+xgboost,No,Yes,206
+xgboost,Yes,No,107
+xgboost,Yes,Yes,267

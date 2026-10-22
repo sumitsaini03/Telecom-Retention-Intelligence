@@ -1,0 +1,105 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "17d7056916b2dc8a7a1a",
+  "position": {
+    "x": 20,
+    "y": 486,
+    "z": 5,
+    "height": 212,
+    "width": 1241,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "finding"
+                }
+              },
+              "queryRef": "Recommendations.finding",
+              "nativeQueryRef": "Recommendations.finding",
+              "displayName": "Finding"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "supporting_metric"
+                }
+              },
+              "queryRef": "Recommendations.supporting_metric",
+              "nativeQueryRef": "Recommendations.supporting_metric",
+              "displayName": "Evidence"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "business_implication"
+                }
+              },
+              "queryRef": "Recommendations.business_implication",
+              "nativeQueryRef": "Recommendations.business_implication",
+              "displayName": "Business implication"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "validation_required"
+                }
+              },
+              "queryRef": "Recommendations.validation_required",
+              "nativeQueryRef": "Recommendations.validation_required",
+              "displayName": "Next validation"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Commercial interpretation and follow-up'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

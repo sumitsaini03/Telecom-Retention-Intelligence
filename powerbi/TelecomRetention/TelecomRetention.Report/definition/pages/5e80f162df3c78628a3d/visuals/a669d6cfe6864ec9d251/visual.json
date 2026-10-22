@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "a669d6cfe6864ec9d251",
+  "position": {
+    "x": 820,
+    "y": 170,
+    "z": 3,
+    "height": 216,
+    "width": 441,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Average Holdout Churn Probability"
+                }
+              },
+              "queryRef": "Customer Profile.Average Holdout Churn Probability",
+              "nativeQueryRef": "Customer Profile.Average Holdout Churn Probability",
+              "displayName": "Average Probability"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Holdout Scores"
+                    }
+                  },
+                  "Property": "Churn"
+                }
+              },
+              "queryRef": "Holdout Scores.Churn",
+              "nativeQueryRef": "Holdout Scores.Churn",
+              "displayName": "Observed Outcome"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Mean predicted probability by actual outcome'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

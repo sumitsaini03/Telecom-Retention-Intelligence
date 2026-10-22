@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "TelecomRetention"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9adec11e-1701-4220-9e53-0aeb6acad667"
+  }
+}

@@ -1,0 +1,141 @@
+# DAX measure library
+
+Total Customers =
+DISTINCTCOUNT('Customer Profile'[customerID])
+
+-- Unique customer IDs in the current customer profile filter context.
+
+Churned Customers =
+CALCULATE([Total Customers], 'Customer Profile'[Churn] = "Yes")
+
+-- Unique customers labeled churned in the source snapshot.
+
+Retained Customers =
+[Total Customers] - [Churned Customers]
+
+-- Unique customers labeled not churned in the source snapshot.
+
+Observed Churn Rate =
+DIVIDE([Churned Customers], [Total Customers])
+
+-- Churned customers divided by customers after current customer filters.
+
+Observed Retention Rate =
+DIVIDE([Retained Customers], [Total Customers])
+
+-- Retained customers divided by customers after current customer filters.
+
+Average Tenure Months =
+AVERAGE('Customer Profile'[tenure])
+
+-- Mean observed tenure in months for the filtered customer profile.
+
+Average Monthly Charges =
+AVERAGE('Customer Profile'[MonthlyCharges])
+
+-- Mean MonthlyCharges; the source does not specify a currency code.
+
+Average Monthly Charges among Churned =
+CALCULATE(AVERAGE('Customer Profile'[MonthlyCharges]), 'Customer Profile'[Churn] = "Yes")
+
+-- Descriptive mean charge among rows labeled churned; not a realized loss.
+
+Monthly Charges Associated with Churned Customers =
+CALCULATE(SUM('Customer Profile'[MonthlyCharges]), 'Customer Profile'[Churn] = "Yes")
+
+-- Sum of observed monthly charges for churn-labeled customers; not proven future revenue loss.
+
+Churn Contribution to Filtered Total =
+DIVIDE([Churned Customers], CALCULATE([Churned Customers], ALLSELECTED('Customer Profile')))
+
+-- Segment churn count divided by total churn count under the outer report selection.
+
+Holdout Test Customers =
+DISTINCTCOUNT('Holdout Scores'[customerID])
+
+-- Unique customers in the fixed held-out test split.
+
+Holdout Churned Customers =
+CALCULATE([Holdout Test Customers], 'Holdout Scores'[Churn] = "Yes")
+
+-- Observed churn labels in the fixed test split.
+
+Holdout Observed Churn Rate =
+DIVIDE([Holdout Churned Customers], [Holdout Test Customers])
+
+-- Observed churn prevalence in the fixed test split; not recalculated by the model.
+
+Holdout High Risk Customers =
+CALCULATE([Holdout Test Customers], 'Holdout Scores'[risk_tier] IN {"High", "Critical"})
+
+-- Held-out customers assigned High or Critical risk tiers by the existing scoring export.
+
+Average Holdout Churn Probability =
+AVERAGE('Holdout Scores'[churn_probability])
+
+-- Mean predicted probability across the fixed held-out test split or selected risk tier.
+
+Holdout Predicted Positive Customers =
+CALCULATE([Holdout Test Customers], 'Holdout Scores'[predicted_churn] = 1)
+
+-- Held-out cases classified positive at the model's documented threshold.
+
+XGBoost ROC AUC =
+CALCULATE(MAX('Model Metrics'[roc_auc]), 'Model Metrics'[model] = "xgboost")
+
+-- Fixed test-set ROC-AUC from the authoritative model output.
+
+XGBoost Average Precision =
+CALCULATE(MAX('Model Metrics'[pr_auc_average_precision]), 'Model Metrics'[model] = "xgboost")
+
+-- Fixed test-set average precision from the authoritative model output.
+
+XGBoost Precision =
+CALCULATE(MAX('Model Metrics'[precision]), 'Model Metrics'[model] = "xgboost")
+
+-- Fixed test-set precision at the threshold selected from training OOF predictions.
+
+XGBoost Recall =
+CALCULATE(MAX('Model Metrics'[recall]), 'Model Metrics'[model] = "xgboost")
+
+-- Fixed test-set recall at the threshold selected from training OOF predictions.
+
+XGBoost F1 =
+CALCULATE(MAX('Model Metrics'[f1]), 'Model Metrics'[model] = "xgboost")
+
+-- Fixed test-set F1 at the threshold selected from training OOF predictions.
+
+XGBoost Accuracy =
+CALCULATE(MAX('Model Metrics'[accuracy]), 'Model Metrics'[model] = "xgboost")
+
+-- Fixed test-set accuracy; interpret alongside class balance and confusion matrix.
+
+XGBoost Threshold =
+CALCULATE(MAX('Model Metrics'[threshold]), 'Model Metrics'[model] = "xgboost")
+
+-- Classification threshold chosen from five-fold out-of-fold training predictions.
+
+XGBoost Evaluation Size =
+CALCULATE(MAX('Model Metrics'[evaluation_size]), 'Model Metrics'[model] = "xgboost")
+
+-- Number of cases in the fixed test evaluation.
+
+ROC Curve True Positive Rate =
+AVERAGE('ROC Curve'[y_value])
+
+-- Empirical held-out true-positive rate at each false-positive-rate coordinate.
+
+Precision Recall Curve Precision =
+AVERAGE('Precision Recall Curve'[y_value])
+
+-- Empirical held-out precision at each recall coordinate; repeated coordinates are collapsed for plotting.
+
+Mean Absolute SHAP =
+AVERAGE('Feature Importance'[mean_abs_shap])
+
+-- Mean absolute SHAP value from the fitted XGBoost booster, in raw-margin units.
+
+Hypothetical Gross Charges =
+SUM('Retention Scenario'[gross_charges_over_assumed_months_hypothetical])
+
+-- Illustrative charge arithmetic under the CSV assumptions; not revenue, profit, savings, or measured retention.

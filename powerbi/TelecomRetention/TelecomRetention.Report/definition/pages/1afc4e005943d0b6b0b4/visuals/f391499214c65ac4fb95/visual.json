@@ -1,0 +1,105 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "f391499214c65ac4fb95",
+  "position": {
+    "x": 20,
+    "y": 486,
+    "z": 5,
+    "height": 212,
+    "width": 1241,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "finding"
+                }
+              },
+              "queryRef": "Recommendations.finding",
+              "nativeQueryRef": "Recommendations.finding",
+              "displayName": "Observed finding"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "supporting_metric"
+                }
+              },
+              "queryRef": "Recommendations.supporting_metric",
+              "nativeQueryRef": "Recommendations.supporting_metric",
+              "displayName": "Evidence"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "proposed_action"
+                }
+              },
+              "queryRef": "Recommendations.proposed_action",
+              "nativeQueryRef": "Recommendations.proposed_action",
+              "displayName": "Proposed investigation"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "evidence_scope"
+                }
+              },
+              "queryRef": "Recommendations.evidence_scope",
+              "nativeQueryRef": "Recommendations.evidence_scope",
+              "displayName": "Scope and caveat"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Evidence for retention investigations'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

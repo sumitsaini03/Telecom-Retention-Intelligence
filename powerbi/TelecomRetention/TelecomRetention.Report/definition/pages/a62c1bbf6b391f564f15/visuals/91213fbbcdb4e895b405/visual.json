@@ -1,0 +1,150 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "91213fbbcdb4e895b405",
+  "position": {
+    "x": 20,
+    "y": 12,
+    "z": 0,
+    "height": 390,
+    "width": 1241,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "finding"
+                }
+              },
+              "queryRef": "Recommendations.finding",
+              "nativeQueryRef": "Recommendations.finding",
+              "displayName": "Finding"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "supporting_metric"
+                }
+              },
+              "queryRef": "Recommendations.supporting_metric",
+              "nativeQueryRef": "Recommendations.supporting_metric",
+              "displayName": "Supporting metric"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "observed_segment"
+                }
+              },
+              "queryRef": "Recommendations.observed_segment",
+              "nativeQueryRef": "Recommendations.observed_segment",
+              "displayName": "Observed segment"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "business_implication"
+                }
+              },
+              "queryRef": "Recommendations.business_implication",
+              "nativeQueryRef": "Recommendations.business_implication",
+              "displayName": "Business implication"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "proposed_action"
+                }
+              },
+              "queryRef": "Recommendations.proposed_action",
+              "nativeQueryRef": "Recommendations.proposed_action",
+              "displayName": "Proposed action"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "priority"
+                }
+              },
+              "queryRef": "Recommendations.priority",
+              "nativeQueryRef": "Recommendations.priority",
+              "displayName": "Priority"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "validation_required"
+                }
+              },
+              "queryRef": "Recommendations.validation_required",
+              "nativeQueryRef": "Recommendations.validation_required",
+              "displayName": "Validation required"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Recommendations grounded in observed evidence'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

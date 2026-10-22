@@ -1,0 +1,105 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "6f3a69aec11d3264894e",
+  "position": {
+    "x": 20,
+    "y": 476,
+    "z": 6,
+    "height": 222,
+    "width": 1241,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "finding"
+                }
+              },
+              "queryRef": "Recommendations.finding",
+              "nativeQueryRef": "Recommendations.finding",
+              "displayName": "Observed finding"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "supporting_metric"
+                }
+              },
+              "queryRef": "Recommendations.supporting_metric",
+              "nativeQueryRef": "Recommendations.supporting_metric",
+              "displayName": "Count and rate"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "priority"
+                }
+              },
+              "queryRef": "Recommendations.priority",
+              "nativeQueryRef": "Recommendations.priority",
+              "displayName": "Priority"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "validation_required"
+                }
+              },
+              "queryRef": "Recommendations.validation_required",
+              "nativeQueryRef": "Recommendations.validation_required",
+              "displayName": "Validation required"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Evidence-backed hypotheses to investigate'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

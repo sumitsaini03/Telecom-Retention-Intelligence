@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "af6b989c7beb08d7dd3a",
+  "position": {
+    "x": 375,
+    "y": 170,
+    "z": 2,
+    "height": 216,
+    "width": 430,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Mean Absolute SHAP"
+                }
+              },
+              "queryRef": "Customer Profile.Mean Absolute SHAP",
+              "nativeQueryRef": "Customer Profile.Mean Absolute SHAP",
+              "displayName": "Mean Absolute SHAP"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Feature Importance"
+                    }
+                  },
+                  "Property": "feature"
+                }
+              },
+              "queryRef": "Feature Importance.feature",
+              "nativeQueryRef": "Feature Importance.feature",
+              "displayName": "Feature"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Feature Importance"
+                  }
+                },
+                "Property": "mean_abs_shap"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top 10 mean absolute SHAP features (raw-margin units)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

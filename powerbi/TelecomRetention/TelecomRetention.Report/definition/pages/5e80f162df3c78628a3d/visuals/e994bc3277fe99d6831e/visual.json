@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "e994bc3277fe99d6831e",
+  "position": {
+    "x": 632,
+    "y": 400,
+    "z": 5,
+    "height": 286,
+    "width": 629,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Precision Recall Curve Precision"
+                }
+              },
+              "queryRef": "Customer Profile.Precision Recall Curve Precision",
+              "nativeQueryRef": "Customer Profile.Precision Recall Curve Precision",
+              "displayName": "Precision"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Precision Recall Curve"
+                    }
+                  },
+                  "Property": "x_value"
+                }
+              },
+              "queryRef": "Precision Recall Curve.x_value",
+              "nativeQueryRef": "Precision Recall Curve.x_value",
+              "displayName": "Recall"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Precision Recall Curve"
+                  }
+                },
+                "Property": "x_value"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Precision–recall curve — held-out test scores'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

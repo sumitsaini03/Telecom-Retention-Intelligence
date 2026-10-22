@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "a53eb5b7d20885e1bb0a",
+  "position": {
+    "x": 438,
+    "y": 12,
+    "z": 1,
+    "height": 215,
+    "width": 405,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Holdout Observed Churn Rate"
+                }
+              },
+              "queryRef": "Customer Profile.Holdout Observed Churn Rate",
+              "nativeQueryRef": "Customer Profile.Holdout Observed Churn Rate",
+              "displayName": "Observed Churn Rate"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Holdout Scores"
+                    }
+                  },
+                  "Property": "risk_tier"
+                }
+              },
+              "queryRef": "Holdout Scores.risk_tier",
+              "nativeQueryRef": "Holdout Scores.risk_tier",
+              "displayName": "Risk Tier"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Observed test churn rate by risk tier'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

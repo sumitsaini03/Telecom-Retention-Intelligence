@@ -1,0 +1,320 @@
+table 'Customer Profile'
+	lineageTag: 5c4dad21-e6f3-5f99-a927-7a7e0a313543
+	column 'customerID'
+		dataType: string
+		sourceColumn: customerID
+		summarizeBy: none
+		lineageTag: 6d6e8db8-3809-5d94-a870-8481fdfa71da
+	column 'gender'
+		dataType: string
+		sourceColumn: gender
+		summarizeBy: none
+		lineageTag: 7b2245b3-338b-5b1d-bd06-112c546b14bc
+	column 'SeniorCitizen'
+		dataType: int64
+		sourceColumn: SeniorCitizen
+		summarizeBy: sum
+		lineageTag: f00af455-d5f1-5803-a138-fe913c46bc3d
+	column 'Partner'
+		dataType: string
+		sourceColumn: Partner
+		summarizeBy: none
+		lineageTag: d6c9160d-c1fb-5617-911a-6d4aa92a6cba
+	column 'Dependents'
+		dataType: string
+		sourceColumn: Dependents
+		summarizeBy: none
+		lineageTag: 2929b157-e50e-5507-9498-fc6956f0c646
+	column 'tenure'
+		dataType: int64
+		sourceColumn: tenure
+		summarizeBy: sum
+		lineageTag: 093c64e7-de36-5520-a39b-42f5d0a0dd8f
+	column 'PhoneService'
+		dataType: string
+		sourceColumn: PhoneService
+		summarizeBy: none
+		lineageTag: 60bebb81-fa40-5e58-8056-dd015a768adc
+	column 'MultipleLines'
+		dataType: string
+		sourceColumn: MultipleLines
+		summarizeBy: none
+		lineageTag: a1bbaddd-6490-5814-a99e-11bf6d0120c6
+	column 'InternetService'
+		dataType: string
+		sourceColumn: InternetService
+		summarizeBy: none
+		lineageTag: 4d4d45d3-6ac5-5560-b28e-d6094e7451bd
+	column 'OnlineSecurity'
+		dataType: string
+		sourceColumn: OnlineSecurity
+		summarizeBy: none
+		lineageTag: 0576accf-6021-587a-b3d8-5aad960afb60
+	column 'OnlineBackup'
+		dataType: string
+		sourceColumn: OnlineBackup
+		summarizeBy: none
+		lineageTag: 0568814e-b54a-5659-9084-3d4b2100222c
+	column 'DeviceProtection'
+		dataType: string
+		sourceColumn: DeviceProtection
+		summarizeBy: none
+		lineageTag: 5ce01b98-7f1f-5b86-a529-78adf4ae0327
+	column 'TechSupport'
+		dataType: string
+		sourceColumn: TechSupport
+		summarizeBy: none
+		lineageTag: d10d0cda-7a9c-54f4-946e-9dfc558ba658
+	column 'StreamingTV'
+		dataType: string
+		sourceColumn: StreamingTV
+		summarizeBy: none
+		lineageTag: d8614515-17c0-5a9f-a1d8-e665cd851c39
+	column 'StreamingMovies'
+		dataType: string
+		sourceColumn: StreamingMovies
+		summarizeBy: none
+		lineageTag: 03b13dfd-10ba-56c9-875d-2068982c412d
+	column 'Contract'
+		dataType: string
+		sourceColumn: Contract
+		summarizeBy: none
+		lineageTag: b6c84703-eaaf-5974-b8fa-30421d496c0c
+	column 'PaperlessBilling'
+		dataType: string
+		sourceColumn: PaperlessBilling
+		summarizeBy: none
+		lineageTag: 835306e4-bd67-5b14-9822-6845134421ec
+	column 'PaymentMethod'
+		dataType: string
+		sourceColumn: PaymentMethod
+		summarizeBy: none
+		lineageTag: b5f17d34-1431-5db0-be98-6bb58d72e450
+	column 'MonthlyCharges'
+		dataType: double
+		sourceColumn: MonthlyCharges
+		summarizeBy: average
+		lineageTag: 7cb4d393-431c-58da-b12c-08dc0522129b
+	column 'TotalCharges'
+		dataType: double
+		sourceColumn: TotalCharges
+		summarizeBy: average
+		lineageTag: ee8db4da-f146-5cc9-a98d-67f9e73465e1
+	column 'Churn'
+		dataType: string
+		sourceColumn: Churn
+		summarizeBy: none
+		lineageTag: d244f4c7-3c6a-5080-9557-67dd30524817
+	column 'Churn_Flag'
+		dataType: int64
+		sourceColumn: Churn_Flag
+		summarizeBy: sum
+		lineageTag: 902d3c4d-7e8d-505c-9626-6a191e5ba5e4
+		folder: Data Quality
+	column 'tenure_band'
+		dataType: string
+		sourceColumn: tenure_band
+		summarizeBy: none
+		lineageTag: 8bc34600-545d-5c62-9534-75adb57e3256
+		sortByColumn: tenure_band_order
+	column 'MonthlyChargeBand'
+		dataType: string
+		sourceColumn: MonthlyChargeBand
+		summarizeBy: none
+		lineageTag: 7d49c5bc-f728-566c-aa30-af970a6f9727
+	column 'ServiceCombination'
+		dataType: string
+		sourceColumn: ServiceCombination
+		summarizeBy: none
+		lineageTag: 41f80593-799c-5e6c-b5e2-f5369f00d47a
+	column 'tenure_band_order'
+		dataType: int64
+		sourceColumn: tenure_band_order
+		summarizeBy: sum
+		lineageTag: 7fc3c833-901e-5e2c-b276-898e6168753a
+	column 'risk_tier_order'
+		dataType: int64
+		sourceColumn: risk_tier_order
+		summarizeBy: sum
+		lineageTag: 3cb0fa13-388f-5e4a-b7cf-f21301c6abf4
+	column 'churn_probability'
+		dataType: double
+		sourceColumn: churn_probability
+		summarizeBy: average
+		lineageTag: f9caff16-e09f-5c0b-baae-156ce9cfb67a
+	column 'predicted_churn'
+		dataType: int64
+		sourceColumn: predicted_churn
+		summarizeBy: sum
+		lineageTag: 381654d2-988a-5f01-af75-a7794dbb34cd
+	column 'risk_tier'
+		dataType: string
+		sourceColumn: risk_tier
+		summarizeBy: none
+		lineageTag: 768663b1-94aa-5399-92af-484a20b319d9
+		sortByColumn: risk_tier_order
+	column 'model_identifier'
+		dataType: string
+		sourceColumn: model_identifier
+		summarizeBy: none
+		lineageTag: ca1d936f-a407-54df-9e30-30a614a11d8c
+	column 'data_split'
+		dataType: string
+		sourceColumn: data_split
+		summarizeBy: none
+		lineageTag: e8b290b9-8459-57cc-be05-577606bce3a5
+
+	// DAX measures are kept with the main customer table so the model has no artificial helper table.
+	measure 'Total Customers' = DISTINCTCOUNT('Customer Profile'[customerID])
+		formatString: #,0
+		displayFolder: Customer KPIs
+		description: "Unique customer IDs in the current customer profile filter context."
+	measure 'Churned Customers' = CALCULATE([Total Customers], 'Customer Profile'[Churn] = "Yes")
+		formatString: #,0
+		displayFolder: Customer KPIs
+		description: "Unique customers labeled churned in the source snapshot."
+	measure 'Retained Customers' = [Total Customers] - [Churned Customers]
+		formatString: #,0
+		displayFolder: Customer KPIs
+		description: "Unique customers labeled not churned in the source snapshot."
+	measure 'Observed Churn Rate' = DIVIDE([Churned Customers], [Total Customers])
+		formatString: 0.0%
+		displayFolder: Customer KPIs
+		description: "Churned customers divided by customers after current customer filters."
+	measure 'Observed Retention Rate' = DIVIDE([Retained Customers], [Total Customers])
+		formatString: 0.0%
+		displayFolder: Customer KPIs
+		description: "Retained customers divided by customers after current customer filters."
+	measure 'Average Tenure Months' = AVERAGE('Customer Profile'[tenure])
+		formatString: 0.0
+		displayFolder: Customer KPIs
+		description: "Mean observed tenure in months for the filtered customer profile."
+	measure 'Average Monthly Charges' = AVERAGE('Customer Profile'[MonthlyCharges])
+		formatString: 0.00
+		displayFolder: Customer KPIs
+		description: "Mean MonthlyCharges; the source does not specify a currency code."
+	measure 'Average Monthly Charges among Churned' = CALCULATE(AVERAGE('Customer Profile'[MonthlyCharges]), 'Customer Profile'[Churn] = "Yes")
+		formatString: 0.00
+		displayFolder: Commercial Exposure
+		description: "Descriptive mean charge among rows labeled churned; not a realized loss."
+	measure 'Monthly Charges Associated with Churned Customers' = CALCULATE(SUM('Customer Profile'[MonthlyCharges]), 'Customer Profile'[Churn] = "Yes")
+		formatString: #,0.00
+		displayFolder: Commercial Exposure
+		description: "Sum of observed monthly charges for churn-labeled customers; not proven future revenue loss."
+	measure 'Churn Contribution to Filtered Total' = DIVIDE([Churned Customers], CALCULATE([Churned Customers], ALLSELECTED('Customer Profile')))
+		formatString: 0.0%
+		displayFolder: Segment Analysis
+		description: "Segment churn count divided by total churn count under the outer report selection."
+	measure 'Holdout Test Customers' = DISTINCTCOUNT('Holdout Scores'[customerID])
+		formatString: #,0
+		displayFolder: Model Evaluation
+		description: "Unique customers in the fixed held-out test split."
+	measure 'Holdout Churned Customers' = CALCULATE([Holdout Test Customers], 'Holdout Scores'[Churn] = "Yes")
+		formatString: #,0
+		displayFolder: Model Evaluation
+		description: "Observed churn labels in the fixed test split."
+	measure 'Holdout Observed Churn Rate' = DIVIDE([Holdout Churned Customers], [Holdout Test Customers])
+		formatString: 0.0%
+		displayFolder: Model Evaluation
+		description: "Observed churn prevalence in the fixed test split; not recalculated by the model."
+	measure 'Holdout High Risk Customers' = CALCULATE([Holdout Test Customers], 'Holdout Scores'[risk_tier] IN {"High", "Critical"})
+		formatString: #,0
+		displayFolder: Model Evaluation
+		description: "Held-out customers assigned High or Critical risk tiers by the existing scoring export."
+	measure 'Average Holdout Churn Probability' = AVERAGE('Holdout Scores'[churn_probability])
+		formatString: 0.0%
+		displayFolder: Model Evaluation
+		description: "Mean predicted probability across the fixed held-out test split or selected risk tier."
+	measure 'Holdout Predicted Positive Customers' = CALCULATE([Holdout Test Customers], 'Holdout Scores'[predicted_churn] = 1)
+		formatString: #,0
+		displayFolder: Model Evaluation
+		description: "Held-out cases classified positive at the model's documented threshold."
+	measure 'XGBoost ROC AUC' = CALCULATE(MAX('Model Metrics'[roc_auc]), 'Model Metrics'[model] = "xgboost")
+		formatString: 0.000
+		displayFolder: Model Evaluation
+		description: "Fixed test-set ROC-AUC from the authoritative model output."
+	measure 'XGBoost Average Precision' = CALCULATE(MAX('Model Metrics'[pr_auc_average_precision]), 'Model Metrics'[model] = "xgboost")
+		formatString: 0.000
+		displayFolder: Model Evaluation
+		description: "Fixed test-set average precision from the authoritative model output."
+	measure 'XGBoost Precision' = CALCULATE(MAX('Model Metrics'[precision]), 'Model Metrics'[model] = "xgboost")
+		formatString: 0.0%
+		displayFolder: Model Evaluation
+		description: "Fixed test-set precision at the threshold selected from training OOF predictions."
+	measure 'XGBoost Recall' = CALCULATE(MAX('Model Metrics'[recall]), 'Model Metrics'[model] = "xgboost")
+		formatString: 0.0%
+		displayFolder: Model Evaluation
+		description: "Fixed test-set recall at the threshold selected from training OOF predictions."
+	measure 'XGBoost F1' = CALCULATE(MAX('Model Metrics'[f1]), 'Model Metrics'[model] = "xgboost")
+		formatString: 0.000
+		displayFolder: Model Evaluation
+		description: "Fixed test-set F1 at the threshold selected from training OOF predictions."
+	measure 'XGBoost Accuracy' = CALCULATE(MAX('Model Metrics'[accuracy]), 'Model Metrics'[model] = "xgboost")
+		formatString: 0.0%
+		displayFolder: Model Evaluation
+		description: "Fixed test-set accuracy; interpret alongside class balance and confusion matrix."
+	measure 'XGBoost Threshold' = CALCULATE(MAX('Model Metrics'[threshold]), 'Model Metrics'[model] = "xgboost")
+		formatString: 0.00
+		displayFolder: Model Evaluation
+		description: "Classification threshold chosen from five-fold out-of-fold training predictions."
+	measure 'XGBoost Evaluation Size' = CALCULATE(MAX('Model Metrics'[evaluation_size]), 'Model Metrics'[model] = "xgboost")
+		formatString: #,0
+		displayFolder: Model Evaluation
+		description: "Number of cases in the fixed test evaluation."
+	measure 'ROC Curve True Positive Rate' = AVERAGE('ROC Curve'[y_value])
+		formatString: 0.0%
+		displayFolder: Model Evaluation
+		description: "Empirical held-out true-positive rate at each false-positive-rate coordinate."
+	measure 'Precision Recall Curve Precision' = AVERAGE('Precision Recall Curve'[y_value])
+		formatString: 0.0%
+		displayFolder: Model Evaluation
+		description: "Empirical held-out precision at each recall coordinate; repeated coordinates are collapsed for plotting."
+	measure 'Mean Absolute SHAP' = AVERAGE('Feature Importance'[mean_abs_shap])
+		formatString: 0.000
+		displayFolder: Model Interpretation
+		description: "Mean absolute SHAP value from the fitted XGBoost booster, in raw-margin units."
+	measure 'Hypothetical Gross Charges' = SUM('Retention Scenario'[gross_charges_over_assumed_months_hypothetical])
+		formatString: #,0.00
+		displayFolder: Scenario Analysis
+		description: "Illustrative charge arithmetic under the CSV assumptions; not revenue, profit, savings, or measured retention."
+
+	partition 'Customer Profile' = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(ProjectRoot & "/powerbi/data/CustomerReport.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    TypedColumns = Table.TransformColumnTypes(PromotedHeaders, {{"customerID", type text},
+			        {"gender", type text},
+			        {"SeniorCitizen", Int64.Type},
+			        {"Partner", type text},
+			        {"Dependents", type text},
+			        {"tenure", Int64.Type},
+			        {"PhoneService", type text},
+			        {"MultipleLines", type text},
+			        {"InternetService", type text},
+			        {"OnlineSecurity", type text},
+			        {"OnlineBackup", type text},
+			        {"DeviceProtection", type text},
+			        {"TechSupport", type text},
+			        {"StreamingTV", type text},
+			        {"StreamingMovies", type text},
+			        {"Contract", type text},
+			        {"PaperlessBilling", type text},
+			        {"PaymentMethod", type text},
+			        {"MonthlyCharges", type number},
+			        {"TotalCharges", type number},
+			        {"Churn", type text},
+			        {"Churn_Flag", Int64.Type},
+			        {"tenure_band", type text},
+			        {"MonthlyChargeBand", type text},
+			        {"ServiceCombination", type text},
+			        {"tenure_band_order", Int64.Type},
+			        {"risk_tier_order", Int64.Type},
+			        {"churn_probability", type number},
+			        {"predicted_churn", Int64.Type},
+			        {"risk_tier", type text},
+			        {"model_identifier", type text},
+			        {"data_split", type text}}, "en-US")
+			in
+			    TypedColumns

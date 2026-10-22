@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "80616e775f0b82f883f4",
+  "position": {
+    "x": 438,
+    "y": 12,
+    "z": 1,
+    "height": 215,
+    "width": 405,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Observed Churn Rate"
+                }
+              },
+              "queryRef": "Customer Profile.Observed Churn Rate",
+              "nativeQueryRef": "Customer Profile.Observed Churn Rate",
+              "displayName": "Churn Rate"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "tenure_band"
+                }
+              },
+              "queryRef": "Customer Profile.tenure_band",
+              "nativeQueryRef": "Customer Profile.tenure_band",
+              "displayName": "Tenure Band"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Observed churn rate by tenure band'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

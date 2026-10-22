@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "718e59d3085e52f11fa9",
+  "position": {
+    "x": 20,
+    "y": 244,
+    "z": 3,
+    "height": 215,
+    "width": 405,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Observed Churn Rate"
+                }
+              },
+              "queryRef": "Customer Profile.Observed Churn Rate",
+              "nativeQueryRef": "Customer Profile.Observed Churn Rate",
+              "displayName": "Churn Rate"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "InternetService"
+                }
+              },
+              "queryRef": "Customer Profile.InternetService",
+              "nativeQueryRef": "Customer Profile.InternetService",
+              "displayName": "Internet Service"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Observed churn rate by internet service'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

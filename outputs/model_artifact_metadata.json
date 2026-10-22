@@ -1,0 +1,11 @@
+{
+  "artifact_path": "artifacts\\xgboost_churn_model.joblib",
+  "sha256": "979ff9b4fa4bf2cdeb5ad98caa455d0e5bca39e7954e3c6414f7235fa8980ef9",
+  "model_identifier": "xgboost_gridsearch_v1",
+  "feature_count": 19,
+  "training_size": 5634,
+  "threshold": 0.34,
+  "threshold_source": "five-fold out-of-fold training predictions; F1 objective",
+  "source_sha256": "16320c9c1ec72448db59aa0a26a0b95401046bef5d02fd3aeb906448e3055e91",
+  "limitations": "The saved estimator is trained on the 80% training partition. Its threshold is selected from training OOF predictions. It is a local prototype, not a validated production model."
+}

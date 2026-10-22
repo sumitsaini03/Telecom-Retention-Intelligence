@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "97f4f906281d13109aca",
+  "position": {
+    "x": 856,
+    "y": 12,
+    "z": 2,
+    "height": 215,
+    "width": 405,
+    "tabOrder": 2
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Observed Churn Rate"
+                }
+              },
+              "queryRef": "Customer Profile.Observed Churn Rate",
+              "nativeQueryRef": "Customer Profile.Observed Churn Rate",
+              "displayName": "Churn Rate"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "PaymentMethod"
+                }
+              },
+              "queryRef": "Customer Profile.PaymentMethod",
+              "nativeQueryRef": "Customer Profile.PaymentMethod",
+              "displayName": "Payment Method"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Observed churn rate by payment method'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

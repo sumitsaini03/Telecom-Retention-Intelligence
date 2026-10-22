@@ -1,0 +1,97 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "0be4d11280cf8bae750b",
+  "position": {
+    "x": 20,
+    "y": 400,
+    "z": 4,
+    "height": 286,
+    "width": 600,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "ROC Curve True Positive Rate"
+                }
+              },
+              "queryRef": "Customer Profile.ROC Curve True Positive Rate",
+              "nativeQueryRef": "Customer Profile.ROC Curve True Positive Rate",
+              "displayName": "True Positive Rate"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ROC Curve"
+                    }
+                  },
+                  "Property": "x_value"
+                }
+              },
+              "queryRef": "ROC Curve.x_value",
+              "nativeQueryRef": "ROC Curve.x_value",
+              "displayName": "False Positive Rate"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "ROC Curve"
+                  }
+                },
+                "Property": "x_value"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": false
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'ROC curve — held-out test scores'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

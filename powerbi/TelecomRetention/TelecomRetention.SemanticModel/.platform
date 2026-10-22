@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "TelecomRetention.SemanticModel"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2824ae0d-fd5b-5e94-aeaf-8ba4860b79ca"
+  }
+}

@@ -1,0 +1,66 @@
+name: Analytics CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: telco
+          POSTGRES_USER: telco
+          # Test-only credential for this disposable GitHub Actions container.
+          POSTGRES_PASSWORD: ci-test-only-password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U telco -d telco"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      TELCO_PG_DSN: postgresql://telco:ci-test-only-password@localhost:5432/telco
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-lock.txt
+
+      - name: Install pinned dependencies
+        run: python -m pip install -r requirements-lock.txt
+
+      - name: Compile source and test modules
+        run: python -m compileall -q src scripts tests
+
+      - name: Run full analytics pipeline
+        run: python src/analysis.py
+
+      - name: Prepare and build Power BI project
+        run: |
+          python scripts/prepare_powerbi.py
+          python scripts/build_powerbi_project.py
+
+      - name: Set up Node.js for PBIR validation
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Validate Power BI report schema
+        run: npx --yes --package @microsoft/powerbi-report-authoring-cli@0.5.0 powerbi-report-author validate powerbi/TelecomRetention/TelecomRetention.pbip
+
+      - name: Run automated tests
+        run: python -m pytest -q

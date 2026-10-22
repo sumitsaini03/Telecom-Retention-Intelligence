@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "896e50b0feb6b47468d6",
+  "position": {
+    "x": 20,
+    "y": 12,
+    "z": 0,
+    "height": 215,
+    "width": 405,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Holdout Test Customers"
+                }
+              },
+              "queryRef": "Customer Profile.Holdout Test Customers",
+              "nativeQueryRef": "Customer Profile.Holdout Test Customers",
+              "displayName": "Test Customers"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Holdout Scores"
+                    }
+                  },
+                  "Property": "risk_tier"
+                }
+              },
+              "queryRef": "Holdout Scores.risk_tier",
+              "nativeQueryRef": "Holdout Scores.risk_tier",
+              "displayName": "Risk Tier"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Held-out test customers by risk tier'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

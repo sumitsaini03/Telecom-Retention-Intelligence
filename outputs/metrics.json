@@ -1,32 +1,143 @@
 {
   "dataset_rows": 7043,
-  "churn_rate": 0.2654,
+  "observed_churn_count": 1869,
+  "observed_churn_rate": 0.2653698707936959,
   "train_size": 5634,
   "test_size": 1409,
-  "xgb_best_params": {
-    "clf__learning_rate": 0.05,
-    "clf__max_depth": 4,
-    "clf__n_estimators": 100
-  },
-  "xgb_cv_roc_auc": 0.8481,
-  "lr_threshold": 0.33,
-  "xgb_threshold": 0.3,
-  "test_metrics": {
+  "test_positive_count": 374,
+  "test_positive_prevalence": 0.2654364797728886,
+  "random_state": 42,
+  "test_fraction": 0.2,
+  "cross_validation_folds": 5,
+  "threshold_selection": "F1 maximization on five-fold out-of-fold training probabilities only",
+  "model_selection": {
     "logistic_regression": {
-      "threshold": 0.33,
-      "roc_auc": 0.8422,
-      "pr_auc": 0.6352,
-      "precision": 0.5378,
-      "recall": 0.7219,
-      "f1": 0.6164
+      "best_params": {
+        "classifier__C": 4.0
+      },
+      "mean_cv_roc_auc": 0.8464173601783521
     },
     "xgboost": {
-      "threshold": 0.3,
-      "roc_auc": 0.8465,
-      "pr_auc": 0.661,
-      "precision": 0.5338,
-      "recall": 0.7807,
-      "f1": 0.6341
+      "best_params": {
+        "classifier__learning_rate": 0.05,
+        "classifier__max_depth": 4,
+        "classifier__n_estimators": 100
+      },
+      "mean_cv_roc_auc": 0.8490489969905741
     }
-  }
+  },
+  "test_metrics": {
+    "logistic_regression": {
+      "threshold": 0.32000000000000006,
+      "threshold_source": "five-fold out-of-fold training predictions; F1 objective",
+      "roc_auc": 0.84165439561859,
+      "roc_auc_bootstrap_95pct_ci": [
+        0.8180981058705984,
+        0.8634571728487817
+      ],
+      "pr_auc_average_precision": 0.6295316233755983,
+      "precision": 0.530214424951267,
+      "recall": 0.7272727272727273,
+      "f1": 0.6133032694475761,
+      "accuracy": 0.7565649396735273,
+      "specificity": 0.7671497584541063,
+      "brier_score": 0.13830271873369532,
+      "confusion_matrix": {
+        "tn": 794,
+        "fp": 241,
+        "fn": 102,
+        "tp": 272
+      },
+      "evaluation_size": 1409,
+      "positive_count": 374,
+      "positive_prevalence": 0.2654364797728886
+    },
+    "xgboost": {
+      "threshold": 0.34,
+      "threshold_source": "five-fold out-of-fold training predictions; F1 objective",
+      "roc_auc": 0.8465008137642409,
+      "roc_auc_bootstrap_95pct_ci": [
+        0.8250792886919455,
+        0.8681410564121477
+      ],
+      "pr_auc_average_precision": 0.6602854977015155,
+      "precision": 0.5644820295983086,
+      "recall": 0.713903743315508,
+      "f1": 0.6304604486422668,
+      "accuracy": 0.7778566359119943,
+      "specificity": 0.8009661835748793,
+      "brier_score": 0.13508903980255127,
+      "confusion_matrix": {
+        "tn": 829,
+        "fp": 206,
+        "fn": 107,
+        "tp": 267
+      },
+      "evaluation_size": 1409,
+      "positive_count": 374,
+      "positive_prevalence": 0.2654364797728886
+    }
+  },
+  "shap": {
+    "status": "passed",
+    "method": "TreeSHAP on fitted XGBoost Booster",
+    "explained_holdout_rows": 500,
+    "transformed_feature_count": 45,
+    "top_features": [
+      {
+        "feature": "Contract_Month-to-month",
+        "mean_abs_shap": 0.7395121455192566
+      },
+      {
+        "feature": "tenure",
+        "mean_abs_shap": 0.3919532001018524
+      },
+      {
+        "feature": "MonthlyCharges",
+        "mean_abs_shap": 0.2692502737045288
+      },
+      {
+        "feature": "OnlineSecurity_No",
+        "mean_abs_shap": 0.23832307755947113
+      },
+      {
+        "feature": "InternetService_Fiber optic",
+        "mean_abs_shap": 0.1852094978094101
+      },
+      {
+        "feature": "TechSupport_No",
+        "mean_abs_shap": 0.1725536435842514
+      },
+      {
+        "feature": "PaymentMethod_Electronic check",
+        "mean_abs_shap": 0.15207098424434662
+      },
+      {
+        "feature": "PaperlessBilling_No",
+        "mean_abs_shap": 0.11459992080926895
+      },
+      {
+        "feature": "Contract_Two year",
+        "mean_abs_shap": 0.10225831717252731
+      },
+      {
+        "feature": "TotalCharges",
+        "mean_abs_shap": 0.10106835514307022
+      }
+    ],
+    "output_scale": "raw margin (log-odds)",
+    "limitation": "Feature attributions describe fitted model associations, not causes."
+  },
+  "model_artifact": {
+    "artifact_path": "artifacts\\xgboost_churn_model.joblib",
+    "sha256": "979ff9b4fa4bf2cdeb5ad98caa455d0e5bca39e7954e3c6414f7235fa8980ef9",
+    "model_identifier": "xgboost_gridsearch_v1",
+    "feature_count": 19,
+    "training_size": 5634,
+    "threshold": 0.34,
+    "threshold_source": "five-fold out-of-fold training predictions; F1 objective",
+    "source_sha256": "16320c9c1ec72448db59aa0a26a0b95401046bef5d02fd3aeb906448e3055e91",
+    "limitations": "The saved estimator is trained on the 80% training partition. Its threshold is selected from training OOF predictions. It is a local prototype, not a validated production model."
+  },
+  "data_quality_sha256": "16320c9c1ec72448db59aa0a26a0b95401046bef5d02fd3aeb906448e3055e91"
 }

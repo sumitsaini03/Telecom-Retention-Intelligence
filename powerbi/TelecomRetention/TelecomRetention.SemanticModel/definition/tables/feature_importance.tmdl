@@ -1,0 +1,29 @@
+table 'Feature Importance'
+	lineageTag: b8da766b-1ddc-5f03-908f-03e581b9c16b
+	column 'rank'
+		dataType: int64
+		sourceColumn: rank
+		summarizeBy: sum
+		lineageTag: 678e0aaf-87e8-5d77-9124-5941de5e5651
+	column 'feature'
+		dataType: string
+		sourceColumn: feature
+		summarizeBy: none
+		lineageTag: c229e7c8-c13b-5cb6-9acc-5cc3f4e8447c
+	column 'mean_abs_shap'
+		dataType: double
+		sourceColumn: mean_abs_shap
+		summarizeBy: average
+		lineageTag: 119fbb17-6f10-5b7a-b18b-ec5ea0de1396
+
+	partition 'Feature Importance' = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(ProjectRoot & "/powerbi/data/FeatureImportanceTop10.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    TypedColumns = Table.TransformColumnTypes(PromotedHeaders, {{"rank", Int64.Type},
+			        {"feature", type text},
+			        {"mean_abs_shap", type number}}, "en-US")
+			in
+			    TypedColumns

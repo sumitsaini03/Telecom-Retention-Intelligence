@@ -1,0 +1,89 @@
+table 'Retention Scenario'
+	lineageTag: 3e3f7b2a-4f3a-5a95-a698-0f7ae77367ca
+	column 'segment'
+		dataType: string
+		sourceColumn: segment
+		summarizeBy: none
+		lineageTag: c8325a69-3fc8-545f-9bcb-fc7cdf65846c
+	column 'segment_customers_observed'
+		dataType: int64
+		sourceColumn: segment_customers_observed
+		summarizeBy: sum
+		lineageTag: edd0bea7-8184-58fd-826d-2382ecb37be5
+	column 'historically_churned_observed'
+		dataType: int64
+		sourceColumn: historically_churned_observed
+		summarizeBy: sum
+		lineageTag: 4538f017-1df2-507f-8403-8e32a3e14b54
+	column 'historical_churn_rate_observed'
+		dataType: double
+		sourceColumn: historical_churn_rate_observed
+		summarizeBy: average
+		lineageTag: 56f30754-18d6-5205-ba4b-64c15730c3fe
+	column 'average_monthly_charges_observed'
+		dataType: double
+		sourceColumn: average_monthly_charges_observed
+		summarizeBy: average
+		lineageTag: f9b097d4-956d-5ce8-a0ae-8274f4a83832
+	column 'effectiveness_assumption'
+		dataType: double
+		sourceColumn: effectiveness_assumption
+		summarizeBy: average
+		lineageTag: 276c7b9f-1ae5-5b29-9f2e-56589655eb0a
+	column 'customers_retained_hypothetical'
+		dataType: double
+		sourceColumn: customers_retained_hypothetical
+		summarizeBy: average
+		lineageTag: d3f87dbf-16bd-5d9a-a54d-77b49d31982e
+	column 'gross_monthly_charges_retained_hypothetical'
+		dataType: double
+		sourceColumn: gross_monthly_charges_retained_hypothetical
+		summarizeBy: average
+		lineageTag: 8a3b9b55-a2d1-57b3-9f7d-d22e9a893d32
+	column 'gross_charges_over_assumed_months_hypothetical'
+		dataType: double
+		sourceColumn: gross_charges_over_assumed_months_hypothetical
+		summarizeBy: average
+		lineageTag: b977ef80-a883-596e-b6c7-8a1f063aa2c1
+	column 'campaign_cost_hypothetical'
+		dataType: double
+		sourceColumn: campaign_cost_hypothetical
+		summarizeBy: average
+		lineageTag: 745dadc8-900e-55fb-bcd0-e4d7a7e34a7a
+	column 'cost_per_contact_assumption'
+		dataType: double
+		sourceColumn: cost_per_contact_assumption
+		summarizeBy: average
+		lineageTag: 70700c22-bd58-5f7d-8b86-c6a3af039788
+	column 'retained_months_assumption'
+		dataType: int64
+		sourceColumn: retained_months_assumption
+		summarizeBy: sum
+		lineageTag: 2f0243d0-d27a-515c-8db7-aa986950f148
+	column 'interpretation'
+		dataType: string
+		sourceColumn: interpretation
+		summarizeBy: none
+		lineageTag: b3910266-3eff-5f65-8455-573226a92b32
+
+	partition 'Retention Scenario' = m
+		mode: import
+		source =
+			let
+			    Source = Csv.Document(File.Contents(ProjectRoot & "/powerbi/data/RetentionScenario.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+			    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+			    TypedColumns = Table.TransformColumnTypes(PromotedHeaders, {{"segment", type text},
+			        {"segment_customers_observed", Int64.Type},
+			        {"historically_churned_observed", Int64.Type},
+			        {"historical_churn_rate_observed", type number},
+			        {"average_monthly_charges_observed", type number},
+			        {"effectiveness_assumption", type number},
+			        {"customers_retained_hypothetical", type number},
+			        {"gross_monthly_charges_retained_hypothetical", type number},
+			        {"gross_charges_over_assumed_months_hypothetical", type number},
+			        {"campaign_cost_hypothetical", type number},
+			        {"cost_per_contact_assumption", type number},
+			        {"retained_months_assumption", Int64.Type},
+			        {"interpretation", type text}}, "en-US")
+			in
+			    TypedColumns

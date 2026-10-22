@@ -1,0 +1,9 @@
+{
+  "source_url": "https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv",
+  "final_url": "https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv",
+  "retrieval_date": "2026-10-20",
+  "http_status": 200,
+  "bytes": 970457,
+  "sha256": "16320c9c1ec72448db59aa0a26a0b95401046bef5d02fd3aeb906448e3055e91",
+  "verification": "The existing project file matched a fresh HTTP 200 download byte-for-byte."
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "53877a91f2fccbfccab7",
+  "position": {
+    "x": 24,
+    "y": 174,
+    "z": 10,
+    "height": 180,
+    "width": 390,
+    "tabOrder": 10
+  },
+  "visual": {
+    "visualType": "donutChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Total Customers"
+                }
+              },
+              "queryRef": "Customer Profile.Total Customers",
+              "nativeQueryRef": "Customer Profile.Total Customers",
+              "displayName": "Customers"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Churn"
+                }
+              },
+              "queryRef": "Customer Profile.Churn",
+              "nativeQueryRef": "Customer Profile.Churn",
+              "displayName": "Observed Outcome"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Customer outcome mix'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

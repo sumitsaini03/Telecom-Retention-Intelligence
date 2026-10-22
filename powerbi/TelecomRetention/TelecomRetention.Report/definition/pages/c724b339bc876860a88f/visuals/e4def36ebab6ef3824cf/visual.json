@@ -1,0 +1,98 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "e4def36ebab6ef3824cf",
+  "position": {
+    "x": 20,
+    "y": 244,
+    "z": 3,
+    "height": 225,
+    "width": 600,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Average Monthly Charges"
+                }
+              },
+              "queryRef": "Customer Profile.Average Monthly Charges",
+              "nativeQueryRef": "Customer Profile.Average Monthly Charges",
+              "displayName": "Average Monthly Charges"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "tenure_band"
+                }
+              },
+              "queryRef": "Customer Profile.tenure_band",
+              "nativeQueryRef": "Customer Profile.tenure_band",
+              "displayName": "Tenure Band"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Churn"
+                }
+              },
+              "queryRef": "Customer Profile.Churn",
+              "nativeQueryRef": "Customer Profile.Churn",
+              "displayName": "Observed Outcome"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Average monthly charges by tenure band and churn outcome'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

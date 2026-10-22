@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telecom-retention-intelligence"
+version = "1.0.0"
+description = "Reproducible customer churn analytics and risk prioritization on IBM Telco data"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "numpy==2.5.4",
+  "pandas==3.0.3",
+  "joblib==1.6.0",
+  "scikit-learn==1.9.1",
+  "scipy==1.18.1",
+  "matplotlib==3.11.2",
+  "xgboost==3.4.1",
+  "shap==0.54.1",
+  "psycopg[binary]==3.3.6",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+  "integration: requires a live PostgreSQL instance",
+  "authentic: validates the public IBM source dataset and generated outputs",
+  "powerbi_static: validates Power BI handoff source without Power BI Desktop",
+]

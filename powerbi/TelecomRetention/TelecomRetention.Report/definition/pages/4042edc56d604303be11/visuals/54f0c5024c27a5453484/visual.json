@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "54f0c5024c27a5453484",
+  "position": {
+    "x": 850,
+    "y": 174,
+    "z": 12,
+    "height": 180,
+    "width": 405,
+    "tabOrder": 12
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Total Customers"
+                }
+              },
+              "queryRef": "Customer Profile.Total Customers",
+              "nativeQueryRef": "Customer Profile.Total Customers",
+              "displayName": "Customers"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "tenure_band"
+                }
+              },
+              "queryRef": "Customer Profile.tenure_band",
+              "nativeQueryRef": "Customer Profile.tenure_band",
+              "displayName": "Tenure Band"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Customer count by tenure band'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

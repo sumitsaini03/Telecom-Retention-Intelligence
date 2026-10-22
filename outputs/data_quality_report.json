@@ -1,0 +1,110 @@
+{
+  "source_url": "https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv",
+  "source_file": "data\\Telco-Customer-Churn.csv",
+  "sha256": "16320c9c1ec72448db59aa0a26a0b95401046bef5d02fd3aeb906448e3055e91",
+  "file_size_bytes": 970457,
+  "retrieval_date": "2026-10-20",
+  "http_status": 200,
+  "final_url": "https://raw.githubusercontent.com/IBM/telco-customer-churn-on-icp4d/master/data/Telco-Customer-Churn.csv",
+  "validation": "passed",
+  "raw_rows": 7043,
+  "clean_rows": 7043,
+  "columns": [
+    "customerID",
+    "gender",
+    "SeniorCitizen",
+    "Partner",
+    "Dependents",
+    "tenure",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod",
+    "MonthlyCharges",
+    "TotalCharges",
+    "Churn"
+  ],
+  "column_count": 21,
+  "source_dtypes": {
+    "customerID": "string",
+    "gender": "str",
+    "SeniorCitizen": "int64",
+    "Partner": "str",
+    "Dependents": "str",
+    "tenure": "int64",
+    "PhoneService": "str",
+    "MultipleLines": "str",
+    "InternetService": "str",
+    "OnlineSecurity": "str",
+    "OnlineBackup": "str",
+    "DeviceProtection": "str",
+    "TechSupport": "str",
+    "StreamingTV": "str",
+    "StreamingMovies": "str",
+    "Contract": "str",
+    "PaperlessBilling": "str",
+    "PaymentMethod": "str",
+    "MonthlyCharges": "float64",
+    "TotalCharges": "string",
+    "Churn": "str"
+  },
+  "unique_customer_ids": 7043,
+  "duplicate_customer_id_rows": 0,
+  "duplicate_full_record_rows": 0,
+  "missing_values_by_column": {
+    "TotalCharges": 11
+  },
+  "blank_total_charges_count": 11,
+  "blank_total_charges_tenure_zero_count": 11,
+  "blank_total_charges_nonzero_tenure_count": 0,
+  "zero_tenure_count": 11,
+  "zero_tenure_churned_count": 0,
+  "total_charges_imputed_to_zero": 11,
+  "invalid_categories": {},
+  "impossible_numeric_values": {
+    "tenure_outside_0_72": 0,
+    "senior_citizen_not_0_or_1": 0,
+    "negative_monthly_charges": 0,
+    "negative_total_charges": 0,
+    "non_numeric_total_charges": 0
+  },
+  "unexplained_missing_values": {},
+  "churn_counts": {
+    "No": 5174,
+    "Yes": 1869
+  },
+  "churn_rate": 0.2653698707936959,
+  "reference_checks": {
+    "expected_rows_7043": true,
+    "expected_columns_21": true,
+    "expected_churn_yes_1869": true
+  },
+  "numeric_summary": {
+    "tenure_min": 0,
+    "tenure_max": 72,
+    "monthly_charges_min": 18.25,
+    "monthly_charges_max": 118.75,
+    "total_charges_min": 0.0,
+    "total_charges_max": 8684.8,
+    "tenure_total_charges_correlation": 0.8261783979502434,
+    "rows_total_charges_below_monthly_charges": 0,
+    "zero_tenure_with_positive_monthly_charge": 11
+  },
+  "row_accounting": {
+    "raw": 7043,
+    "cleaned": 7043,
+    "dropped": 0
+  },
+  "limitations": [
+    "This is a single observational snapshot; churn associations do not establish causes.",
+    "TotalCharges blanks are only imputed to zero after confirming all 11 have zero tenure and none churned."
+  ]
+}

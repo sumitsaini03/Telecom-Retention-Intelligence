@@ -1,0 +1,14 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	annotation PBI_QueryOrder = ["Customer Profile", "Holdout Scores", "Model Metrics", "Confusion Matrix", "ROC Curve", "Precision Recall Curve", "Feature Importance", "Retention Scenario", "Recommendations"]
+	ref table 'Customer Profile'
+	ref table 'Holdout Scores'
+	ref table 'Model Metrics'
+	ref table 'Confusion Matrix'
+	ref table 'ROC Curve'
+	ref table 'Precision Recall Curve'
+	ref table 'Feature Importance'
+	ref table 'Retention Scenario'
+	ref table 'Recommendations'

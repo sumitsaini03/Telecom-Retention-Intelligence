@@ -1,31 +1,16 @@
 {
-    "name": "Telecom Retention Intelligence",
-    "comment": "UNVALIDATED - cannot test in Power BI Desktop from this environment",
-    "dataColors": [
-        "#1a365d", "#2b6cb0", "#4299e1", "#63b3ed",
-        "#c53030", "#e53e3e", "#fc8181",
-        "#718096", "#a0aec0", "#cbd5e0"
-    ],
-    "background": "#ffffff",
-    "foreground": "#1a202c",
-    "tableAccent": "#2b6cb0",
-    "visualStyles": {
-        "*": {
-            "*": {
-                "general": [{
-                    "responsive": true
-                }],
-                "title": [{
-                    "fontFamily": "Segoe UI",
-                    "fontSize": 12,
-                    "fontColor": {"solid": {"color": "#1a202c"}}
-                }],
-                "labels": [{
-                    "fontFamily": "Segoe UI",
-                    "fontSize": 10,
-                    "fontColor": {"solid": {"color": "#4a5568"}}
-                }]
-            }
-        }
-    }
+  "name": "Telecom Retention Intelligence",
+  "dataColors": [
+    "#16324F",
+    "#287D8E",
+    "#51A6A0",
+    "#E6A23C",
+    "#C94F52",
+    "#6C7A89",
+    "#9AB4C7",
+    "#725AC1"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#203040",
+  "tableAccent": "#287D8E"
 }

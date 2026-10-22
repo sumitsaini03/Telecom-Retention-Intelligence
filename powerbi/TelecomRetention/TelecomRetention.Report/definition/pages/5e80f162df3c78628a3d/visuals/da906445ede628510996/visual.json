@@ -1,0 +1,105 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "da906445ede628510996",
+  "position": {
+    "x": 20,
+    "y": 170,
+    "z": 1,
+    "height": 216,
+    "width": 340,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Confusion Matrix"
+                    }
+                  },
+                  "Property": "model"
+                }
+              },
+              "queryRef": "Confusion Matrix.model",
+              "nativeQueryRef": "Confusion Matrix.model",
+              "displayName": "Model"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Confusion Matrix"
+                    }
+                  },
+                  "Property": "actual_outcome"
+                }
+              },
+              "queryRef": "Confusion Matrix.actual_outcome",
+              "nativeQueryRef": "Confusion Matrix.actual_outcome",
+              "displayName": "Actual"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Confusion Matrix"
+                    }
+                  },
+                  "Property": "predicted_outcome"
+                }
+              },
+              "queryRef": "Confusion Matrix.predicted_outcome",
+              "nativeQueryRef": "Confusion Matrix.predicted_outcome",
+              "displayName": "Predicted"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Confusion Matrix"
+                    }
+                  },
+                  "Property": "customers"
+                }
+              },
+              "queryRef": "Confusion Matrix.customers",
+              "nativeQueryRef": "Confusion Matrix.customers",
+              "displayName": "Customers"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Confusion matrix counts at model threshold'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

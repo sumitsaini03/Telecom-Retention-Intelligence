@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "1196e13e5e5f4910cbbe",
+  "position": {
+    "x": 438,
+    "y": 12,
+    "z": 1,
+    "height": 215,
+    "width": 405,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Churned Customers"
+                }
+              },
+              "queryRef": "Customer Profile.Churned Customers",
+              "nativeQueryRef": "Customer Profile.Churned Customers",
+              "displayName": "Churned Customers"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "MonthlyChargeBand"
+                }
+              },
+              "queryRef": "Customer Profile.MonthlyChargeBand",
+              "nativeQueryRef": "Customer Profile.MonthlyChargeBand",
+              "displayName": "Monthly Charge Band"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Churned customers by monthly charge band'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

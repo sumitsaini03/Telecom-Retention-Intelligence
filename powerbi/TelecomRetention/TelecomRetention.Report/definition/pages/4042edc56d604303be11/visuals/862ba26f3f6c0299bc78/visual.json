@@ -1,0 +1,90 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "862ba26f3f6c0299bc78",
+  "position": {
+    "x": 24,
+    "y": 554,
+    "z": 15,
+    "height": 154,
+    "width": 1231,
+    "tabOrder": 15
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "finding"
+                }
+              },
+              "queryRef": "Recommendations.finding",
+              "nativeQueryRef": "Recommendations.finding",
+              "displayName": "Observed finding"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "supporting_metric"
+                }
+              },
+              "queryRef": "Recommendations.supporting_metric",
+              "nativeQueryRef": "Recommendations.supporting_metric",
+              "displayName": "Observed evidence"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Recommendations"
+                    }
+                  },
+                  "Property": "proposed_action"
+                }
+              },
+              "queryRef": "Recommendations.proposed_action",
+              "nativeQueryRef": "Recommendations.proposed_action",
+              "displayName": "Investigation"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Evidence to investigate'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "15c35e62808eb3dcdf3c",
+  "position": {
+    "x": 20,
+    "y": 12,
+    "z": 0,
+    "height": 145,
+    "width": 1241,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Model Metrics"
+                    }
+                  },
+                  "Property": "model"
+                }
+              },
+              "queryRef": "Model Metrics.model",
+              "nativeQueryRef": "Model Metrics.model",
+              "displayName": "Model"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Model Metrics"
+                    }
+                  },
+                  "Property": "roc_auc"
+                }
+              },
+              "queryRef": "Model Metrics.roc_auc",
+              "nativeQueryRef": "Model Metrics.roc_auc",
+              "displayName": "ROC-AUC"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Model Metrics"
+                    }
+                  },
+                  "Property": "pr_auc_average_precision"
+                }
+              },
+              "queryRef": "Model Metrics.pr_auc_average_precision",
+              "nativeQueryRef": "Model Metrics.pr_auc_average_precision",
+              "displayName": "Average Precision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Model Metrics"
+                    }
+                  },
+                  "Property": "precision"
+                }
+              },
+              "queryRef": "Model Metrics.precision",
+              "nativeQueryRef": "Model Metrics.precision",
+              "displayName": "Precision"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Model Metrics"
+                    }
+                  },
+                  "Property": "recall"
+                }
+              },
+              "queryRef": "Model Metrics.recall",
+              "nativeQueryRef": "Model Metrics.recall",
+              "displayName": "Recall"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Model Metrics"
+                    }
+                  },
+                  "Property": "f1"
+                }
+              },
+              "queryRef": "Model Metrics.f1",
+              "nativeQueryRef": "Model Metrics.f1",
+              "displayName": "F1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Model Metrics"
+                    }
+                  },
+                  "Property": "accuracy"
+                }
+              },
+              "queryRef": "Model Metrics.accuracy",
+              "nativeQueryRef": "Model Metrics.accuracy",
+              "displayName": "Accuracy"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Model Metrics"
+                    }
+                  },
+                  "Property": "threshold"
+                }
+              },
+              "queryRef": "Model Metrics.threshold",
+              "nativeQueryRef": "Model Metrics.threshold",
+              "displayName": "Threshold"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Model Metrics"
+                    }
+                  },
+                  "Property": "evaluation_size"
+                }
+              },
+              "queryRef": "Model Metrics.evaluation_size",
+              "nativeQueryRef": "Model Metrics.evaluation_size",
+              "displayName": "Test n"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Fixed holdout comparison'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

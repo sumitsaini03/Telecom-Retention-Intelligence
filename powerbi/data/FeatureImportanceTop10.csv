@@ -1,0 +1,11 @@
+rank,feature,mean_abs_shap
+1,Contract_Month-to-month,0.73951215
+2,tenure,0.3919532
+3,MonthlyCharges,0.26925027
+4,OnlineSecurity_No,0.23832308
+5,InternetService_Fiber optic,0.1852095
+6,TechSupport_No,0.17255364
+7,PaymentMethod_Electronic check,0.15207098
+8,PaperlessBilling_No,0.11459992
+9,Contract_Two year,0.10225832
+10,TotalCharges,0.101068355

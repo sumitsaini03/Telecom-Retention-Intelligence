@@ -1,0 +1,59 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "1f60a98f33ca8db3fda1",
+  "position": {
+    "x": 844,
+    "y": 92,
+    "z": 8,
+    "height": 72,
+    "width": 193,
+    "tabOrder": 8
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Average Tenure Months"
+                }
+              },
+              "queryRef": "Customer Profile.Average Tenure Months",
+              "nativeQueryRef": "Customer Profile.Average Tenure Months"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Average Tenure (months)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

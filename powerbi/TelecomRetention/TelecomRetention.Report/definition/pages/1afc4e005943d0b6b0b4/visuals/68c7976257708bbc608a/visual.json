@@ -1,0 +1,79 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "68c7976257708bbc608a",
+  "position": {
+    "x": 20,
+    "y": 244,
+    "z": 3,
+    "height": 225,
+    "width": 600,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "clusteredBarChart",
+    "query": {
+      "queryState": {
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Customer Profile"
+                    }
+                  },
+                  "Property": "Holdout High Risk Customers"
+                }
+              },
+              "queryRef": "Customer Profile.Holdout High Risk Customers",
+              "nativeQueryRef": "Customer Profile.Holdout High Risk Customers",
+              "displayName": "High-risk Test Customers"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Holdout Scores"
+                    }
+                  },
+                  "Property": "Contract"
+                }
+              },
+              "queryRef": "Holdout Scores.Contract",
+              "nativeQueryRef": "Holdout Scores.Contract",
+              "displayName": "Contract"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'High-risk test customers by contract'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
