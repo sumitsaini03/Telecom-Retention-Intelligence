@@ -41,7 +41,7 @@ Validation date: 2026-10-22 (Asia/Calcutta)
 
 The final analytics, Power BI preparation, and automated suite used Python 3.12.14 in the pinned environment from `requirements-lock.txt`. Database credentials are supplied through local environment configuration and are not recorded in this report.
 
-The GitHub Actions workflow is configured with a disposable PostgreSQL 16 service and an integration-only test credential, so CI will exercise the SQL/Pandas parity test instead of taking the local environment's skip path. This workflow has not yet run on the remote repository.
+The GitHub Actions workflow uses a disposable PostgreSQL 16 service and an integration-only test credential. Its first remote run for commit `95460fe` succeeded in 1 minute 20 seconds and executed the database integration test. GitHub reported that the original action versions targeted Node 20 and were being forced to Node 24; this follow-up updates them to Node 24-compatible releases. The refreshed workflow run will be triggered by the follow-up push.
 
 ### Failures encountered and resolved
 
